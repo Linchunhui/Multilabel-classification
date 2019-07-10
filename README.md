@@ -20,7 +20,8 @@ Index
     -[Quantization with tensorflow](##Quantization with tensorflow)  
     -[Quantization with ncnn](##Quantization with ncnn)  
  
-<!-- /TOC -->
+<!-- /TOC -->  
+
 # How to do multilabel classification.
 ## Change Label Map
 If we just want to do multiclass classification,the label map wil be:
