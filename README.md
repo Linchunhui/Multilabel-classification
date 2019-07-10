@@ -1,6 +1,25 @@
 # Multilabel-classification
 Multilabel classification with mobilenet and inference in ncnn.
+Index
+---
+<!-- TOC -->
 
+- [How to do multilabel classification.](# How to do multilabel classification.)  
+    -[Change Label Map](## Change Label Map)  
+    -[With scikit-learn tools](## With scikit-learn tools)  
+    -[Tips](## Tips)  
+    -[Change the Loss Function](## Change the Loss Function)  
+    -[How to predict](## How to predict)  
+    -[Sample Imbalance](## Sample Imbalance))  
+    -[Spy](## Spy)  
+-[How to Run the Model in Vs2017 with ncnn.](# How to Run the Model in Vs2017 with ncnn.)  
+    -[Step](## Step)  
+    -[Tips ](## Tips )  
+-[Model Compression](# Model Compression)  
+    -[Quantization with tensorflow](## Quantization with tensorflow)  
+    -[Quantization with ncnn](## Quantization with ncnn)  
+ 
+<!-- /TOC -->
 # How to do multilabel classification.
 ## Change Label Map
 If we just want to do multiclass classification,the label map wil be:
@@ -78,6 +97,7 @@ for i in range(len(a)):
 
 # How to Run the Model in Vs2017 with ncnn.
 ncnn[https://github.com/Tencent/ncnn] is a high-performance neural network inference computing framework optimized for mobile platforms.However it doesn't support tensorflow.So we must transfer to some bridge frame `coreml`,`onnx`.
+## Step
 > Step 1 Freeze the model to `.pb`
 ```
 output_node_names = ["input_1","sigmoid_out"]
