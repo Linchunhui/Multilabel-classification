@@ -121,15 +121,15 @@ mobilenetv1.load_model("D:/project/ShuffleNet/ncnn/save1/mobilenetv1.bin");
 >> Input the image
 We use image standardization method when we train.As a result,we must rewrite it with c plus plus.
 ```
-	cv::Mat mean_image, std_image;
-	cv::Mat image = cv::imread(img_path, CV_LOAD_IMAGE_COLOR);
-	cv::cvtColor(image, image, CV_BGR2RGB);
-	cv::resize(image, image, Size(224, 224));
-	cv::meanStdDev(image, mean_image, std_image);
-	float mean1, std1, stda;
-	mean1 = (mean_image.at<double>(0, 0) + mean_image.at<double>(1, 0) + mean_image.at<double>(2, 0)) / 3;
-	std1 = (std_image.at<double>(0, 0) + std_image.at<double>(1, 0) + std_image.at<double>(2, 0)) / 3;
-	stda = max(std1, (1.0 / sqrt(224 * 224 * 3)));
+cv::Mat mean_image, std_image;
+cv::Mat image = cv::imread(img_path, CV_LOAD_IMAGE_COLOR);
+cv::cvtColor(image, image, CV_BGR2RGB);
+cv::resize(image, image, Size(224, 224));
+cv::meanStdDev(image, mean_image, std_image);
+float mean1, std1, stda;
+mean1 = (mean_image.at<double>(0, 0) + mean_image.at<double>(1, 0) + mean_image.at<double>(2, 0)) / 3;
+std1 = (std_image.at<double>(0, 0) + std_image.at<double>(1, 0) + std_image.at<double>(2, 0)) / 3;
+stda = max(std1, (1.0 / sqrt(224 * 224 * 3)));
 ```
 After get the mean and standard deviation, we rewrite the ncnn mat input method.
 ```
@@ -168,18 +168,18 @@ Finally,we can get the result.
 ```
 ncnn::Mat in = ncnn::from_rgb(image.data, 224, 224, mean1, stda, 0);
 
-	ncnn::Extractor ex = mobilenetv1.create_extractor();
-	ex.input("input_1__0", in);
+ncnn::Extractor ex = mobilenetv1.create_extractor();
+ex.input("input_1__0", in);
 
-	ncnn::Mat out;
-	ex.extract("sigmoid_out__0", out);
-	out = out.reshape(out.w * out.h * out.c);
+ncnn::Mat out;
+ex.extract("sigmoid_out__0", out);
+out = out.reshape(out.w * out.h * out.c);
 
-	cls_scores.resize(out.w);
-	for (int j = 0; j<out.w; j++)
-	{
-		cls_scores[j] = out[j];
-	}
+cls_scores.resize(out.w);
+for (int j = 0; j<out.w; j++)
+{
+	cls_scores[j] = out[j];
+}
 ```  
 ## Tips 
 * If you want to use MobileNetV2,please use relu instead of relu6.
@@ -220,9 +220,9 @@ D:/project/ShuffleNet/ncnn/save1/mobilenetv1.table
 ```
 >Run with int8_model
 ```
-	ncnn::Net mobilenetv1;
-	mobilenetv1.load_param("D:/project/ShuffleNet/ncnn/save1/mobilenetv1_int8.param");
-	mobilenetv1.load_model("D:/project/ShuffleNet/ncnn/save1/mobilenetv1_int8.bin");
+ncnn::Net mobilenetv1;
+mobilenetv1.load_param("D:/project/ShuffleNet/ncnn/save1/mobilenetv1_int8.param");
+mobilenetv1.load_model("D:/project/ShuffleNet/ncnn/save1/mobilenetv1_int8.bin");
 ```  
 
 
