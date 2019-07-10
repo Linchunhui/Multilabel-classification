@@ -1,5 +1,6 @@
 # Multilabel-classification
-Multilabel classification with mobilenet and inference in ncnn.
+Multilabel classification with mobilenet and inference in ncnn.  
+
 Index
 ---
 <!-- TOC -->
@@ -14,7 +15,7 @@ Index
     -[Spy](##Spy)  
 -[How to Run the Model in Vs2017 with ncnn.](#How to Run the Model in Vs2017 with ncnn.)  
     -[Step](##Step)  
-    -[Tips ](##Tips )  
+    -[Tips](##Tips)  
 -[Model Compression](#Model Compression)  
     -[Quantization with tensorflow](##Quantization with tensorflow)  
     -[Quantization with ncnn](##Quantization with ncnn)  
