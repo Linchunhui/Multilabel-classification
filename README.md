@@ -98,7 +98,7 @@ for i in range(len(a)):
 `a` is a image path list,find the image and delete it.
 
 # How to Run the Model in Vs2017 with ncnn.
-ncnn(https://github.com/Tencent/ncnn) is a high-performance neural network inference computing framework optimized for mobile platforms.However it doesn't support tensorflow.So we must transfer to some bridge frame `coreml`,`onnx`.
+[ncnn](https://github.com/Tencent/ncnn) is a high-performance neural network inference computing framework optimized for mobile platforms.However it doesn't support tensorflow.So we must transfer to some bridge frame `coreml`,`onnx`.
 ## Step
 > Step 1 Freeze the model to `.pb`
 ```
