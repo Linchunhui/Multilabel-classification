@@ -5,7 +5,7 @@ Index
 ---
 <!-- TOC -->
 
-- [How to do multilabel classification.](#How to do multilabel classification.)  
+- [How to do multilabel classification.](#How\to\do\multilabel\classification.)  
     -[Change Label Map](##Change Label Map)  
     -[With scikit-learn tools](##With scikit-learn tools)  
     -[Tips](##Tips)  
