@@ -12,12 +12,10 @@ Index
     - [Change the Loss Function](##Change\the\Loss\Function)  
     - [How to predict](##How\to\predict)  
     - [Sample Imbalance](##Sample\Imbalance))  
-    - [Spy](##Spy)  
-    
+    - [Spy](##Spy)   
 - [How to Run the Model in Vs2017 with ncnn.](#How\to\Run\the\Model\in\Vs2017\with\ncnn.)  
     - [Step](##Step)  
-    - [Tips](##Tips)  
-    
+    - [Tips](##Tips)   
 - [Model Compression](#Model\Compression)  
     - [Quantization with tensorflow](##Quantization\with\tensorflow)  
     - [Quantization with ncnn](##Quantization\with\ncnn)  
